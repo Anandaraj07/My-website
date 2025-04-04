@@ -1,0 +1,361 @@
+ /*---------------------------------*/
+/* Reset and Base Setup */
+ /*---------------------------------*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to right, #e3f2fd, #fce4ec);
+    color: #333;
+}
+
+
+ /*---------------------------------*/
+/* Navigation Bar */
+ /*---------------------------------*/
+
+
+nav {
+    background: rgba(30, 60, 114, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 25px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: maroon;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color:burlywood;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+ /*---------------------------------*/
+/* Home  Section */
+ /*---------------------------------*/
+
+ 
+#home {
+    background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home h1:first-child {
+    font-size: 48px;
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #aaa;
+}
+
+#home h1:nth-child(2) {
+    font-size: 36px;
+    color: #2a5298;
+    margin-bottom: 20px;
+}
+
+#home p {
+    max-width: 900px;
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+
+ /*---------------------------------*/
+/* Image Slider */
+ /*---------------------------------*/
+
+
+.image-slider {
+    overflow: hidden;
+    width: 90%;
+    margin-top: 50px;
+}
+
+.slider-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll 25s linear infinite;
+}
+
+.slider-track img {
+    height: 230px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+}
+
+.slider-track img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+ /*---------------------------------*/
+/* Admin Login Card */
+ /*---------------------------------*/
+
+
+#admin {
+    background: linear-gradient(to bottom right,#e0f7fa, #fce4ec);
+}
+
+form {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 35px;
+    max-width: 420px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin: 15px 0 8px;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    outline: none;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+form input:focus {
+    border-color: #2196f3;
+}
+
+form button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: linear-gradient(90deg, #16335a, #1e4587);
+}
+
+
+ /*---------------------------------*/
+/* Cards for customer/about sections */
+ /*---------------------------------*/
+
+
+.card {
+    background-color: white;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #2a2a2a;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 17px;
+    color: #444;
+}
+
+ /*---------------------------------*/
+/* Responsive Layout */
+ /*---------------------------------*/
+
+ 
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #home h1 {
+        font-size: 32px;
+    }
+
+    .slider-track img {
+        height: 180px;
+    }
+
+    form {
+        width: 90%;
+    }
+}
+
+  /*---------------------------------*/
+  /* Team Members Container */
+  /*---------------------------------*/
+
+
+  .team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+
+  /*---------------------------------*/ 
+  /* Individual Team Member */
+   /*---------------------------------*/
+
+
+  .team-member {
+    background: rgba(255, 255, 255, 0.2); /* Transparent effect */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 250px;
+    backdrop-filter: blur(5px);
+  }
+
+
+   /*---------------------------------*/
+  /* Team Member Image */
+   /*---------------------------------*/
+
+
+  .team-member img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+  }
+
+
+   /*---------------------------------*/
+  /* Team Member Name */
+ /*---------------------------------*/
+
+
+  .team-member h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+  }
+
+
+   /*---------------------------------*/
+  /* Team Member Role */
+   /*---------------------------------*/
+
+
+  .team-member p {
+    font-size: 16px;
+    opacity: 0.8;
+  }
+
+   /*---------------------------------*/
+  /* Responsive Design */
+   /*---------------------------------*/
+  @media (max-width: 768px) {
+    .team-container {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+  
+   /*---------------------------------*/
+   /* About Section Styling */
+    /*---------------------------------*/
+
+  #aboutSection {
+    padding: 50px;
+    background: #62048d;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+   /*---------------------------------*/
+  /* Ensure smooth scrolling */
+   /*---------------------------------*/
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
